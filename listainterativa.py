@@ -1,7 +1,7 @@
 print("Vamos fazer uma lista!!")
 lista = [] 
 def list_num(lista): # Função para enumerar os itens da lista
-    for item in range (len(lista)):
+    for item in range(len(lista)):
         print(f"{1 + item}. {lista[item]} []")
 while True: # Estrutura de repetição principal, que contém as funcionalidades do programa
     item = input("Digite o nome de um item para ele ser adicionado, digite 'saia', para sair ou 'remova' para remover o item: ") 
@@ -26,4 +26,8 @@ print("Sua lista final é:")
 list_num(lista)
 print("-"*20)
 print("Obrigado por usar nosso sistema de lista!")
+
+with open("lista.txt", "w", encoding="utf-8") as arquivo:
+    for i, item in enumerate(lista, start=1):
+        arquivo.write(f"{i}. {item} []\n")
  
